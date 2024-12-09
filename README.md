@@ -148,6 +148,3 @@ If you have any questions, feel free to reach out!
 **Author**: Indravathi Botcha
 **GitHub**: [Your GitHub Profile](#)  
 
----
-
-This **README.md** file is ready to be uploaded to your GitHub repo. Let me know if you'd like any changes or additional sections. 🚀
