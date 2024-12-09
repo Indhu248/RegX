@@ -96,11 +96,7 @@ While the **core syntax of RegEx is similar across languages**, some details (li
 | **PHP**       | `preg_match_all(pattern, string)`       | `/\d+/` matches numbers     |
 
 ---
-# **🚀 Mastering RegEx in Different Programming Languages**
-
----
-
-## **🛠️ RegEx in Different Languages (With Simple Examples)**
+## **🚀 Mastering RegEx in Different Programming Languages**
 
 ---
 
