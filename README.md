@@ -96,6 +96,183 @@ While the **core syntax of RegEx is similar across languages**, some details (li
 | **PHP**       | `preg_match_all(pattern, string)`       | `/\d+/` matches numbers     |
 
 ---
+# **🚀 Mastering RegEx in Different Programming Languages**
+
+---
+
+## **🛠️ RegEx in Different Languages (With Simple Examples)**
+
+---
+
+### **1️⃣ JavaScript**
+#### **How to Use**
+- **RegEx Syntax**: `/pattern/flags`  
+- **Functions**: `match()`, `test()`, `replace()`, etc.  
+
+#### **Example 1: Extract Emails**
+```javascript
+const text = "Contact me at indu@example.com and support@example.com";
+const emails = text.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g);
+console.log(emails); 
+// Output: ['indu@example.com', 'support@example.com']
+```
+
+#### **Example 2: Validate Phone Numbers**
+```javascript
+const phoneNumber = "987-654-3210";
+const isValid = /^\d{3}-\d{3}-\d{4}$/.test(phoneNumber);
+console.log(isValid); 
+// Output: true
+```
+
+---
+
+### **2️⃣ Python**
+#### **How to Use**
+- **Import Module**: `import re`  
+- **Functions**: `re.match()`, `re.findall()`, `re.sub()`, etc.  
+
+#### **Example 1: Extract Emails**
+```python
+import re
+
+text = "Send your emails to indu@example.com and info@website.com"
+emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', text)
+print(emails) 
+# Output: ['indu@example.com', 'info@website.com']
+```
+
+#### **Example 2: Validate Phone Numbers**
+```python
+import re
+
+phone_number = "987-654-3210"
+is_valid = bool(re.match(r'^\d{3}-\d{3}-\d{4}$', phone_number))
+print(is_valid) 
+# Output: True
+```
+
+---
+
+### **3️⃣ Java**
+#### **How to Use**
+- **Import Module**: `import java.util.regex.*;`  
+- **Functions**: `Pattern.compile()`, `matcher.find()`, etc.  
+
+#### **Example 1: Extract Emails**
+```java
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "Please send an email to indu@example.com and info@website.com";
+        Pattern pattern = Pattern.compile("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b");
+        Matcher matcher = pattern.matcher(text);
+        
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
+}
+// Output: indu@example.com, info@website.com
+```
+
+#### **Example 2: Validate Phone Numbers**
+```java
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String phoneNumber = "987-654-3210";
+        boolean isValid = phoneNumber.matches("\\d{3}-\\d{3}-\\d{4}");
+        System.out.println(isValid); 
+        // Output: true
+    }
+}
+```
+
+---
+
+### **4️⃣ C#**
+#### **How to Use**
+- **Import Module**: `using System.Text.RegularExpressions;`  
+- **Functions**: `Regex.Match()`, `Regex.IsMatch()`, etc.  
+
+#### **Example 1: Extract Emails**
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main() 
+    {
+        string text = "Email us at indu@example.com and info@website.com";
+        MatchCollection matches = Regex.Matches(text, @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b");
+
+        foreach (Match match in matches) 
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
+// Output: indu@example.com, info@website.com
+```
+
+#### **Example 2: Validate Phone Numbers**
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main() 
+    {
+        string phoneNumber = "987-654-3210";
+        bool isValid = Regex.IsMatch(phoneNumber, @"^\d{3}-\d{3}-\d{4}$");
+        Console.WriteLine(isValid); 
+        // Output: true
+    }
+}
+```
+
+---
+
+### **5️⃣ PHP**
+#### **How to Use**
+- **Functions**: `preg_match()`, `preg_match_all()`, `preg_replace()`, etc.  
+
+#### **Example 1: Extract Emails**
+```php
+<?php
+$text = "Please send an email to indu@example.com and info@website.com";
+preg_match_all("/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/", $text, $matches);
+print_r($matches[0]);
+// Output: ['indu@example.com', 'info@website.com']
+?>
+```
+
+#### **Example 2: Validate Phone Numbers**
+```php
+<?php
+$phoneNumber = "987-654-3210";
+$isValid = preg_match("/^\d{3}-\d{3}-\d{4}$/", $phoneNumber);
+echo $isValid; 
+// Output: 1 (true)
+?>
+```
+
+---
+
+## **🧠 How to Remember RegEx Easily**
+Here’s a simple way to remember key RegEx concepts:  
+1. **Break It Down**: Don't try to learn it all at once. Start with `\d` (digits), `\w` (words), and `\s` (spaces).  
+2. **Visualize It**: Use tools like [regex101](https://regex101.com/) to visualize how patterns match text.  
+3. **Practice**: Write simple patterns like matching numbers, emails, or phone numbers.  
+4. **Create Your Cheat Sheet**: Write down patterns you use often and refer to them later.  
+5. **Think of It as LEGO Blocks**: Combine pieces like `^`, `$`, `+`, and `\d` to build complex patterns.  
+
+---
 
 ## **📦 Real-World Use Cases**
 - **📧 Email Validation**: Ensuring user-provided emails follow a standard format.
